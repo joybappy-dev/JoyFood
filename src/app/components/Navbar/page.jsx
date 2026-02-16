@@ -12,7 +12,7 @@ const Navbar = () => {
       setScrolled(window.scrollY);
     });
 
-    window.removeEventListener("scroll", ()=>{});
+    window.removeEventListener("scroll", () => {});
   }, []);
 
   const navlinks = (
@@ -30,7 +30,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className={`bg-white/20 px-3`}>
+    <nav
+      className={`bg-white/20 px-3 border border-gray-400 rounded-sm ${scrolled > 300 && "backdrop-blur-sm"}`}
+    >
       <div className="flex justify-between items-center">
         <Link href="/">
           <Logo />
