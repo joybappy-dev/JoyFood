@@ -1,9 +1,20 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Logo from "../Logo/page";
 import Link from "next/link";
 import Button from "../Button/page";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(null);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScrolled(window.scrollY);
+    });
+
+    window.removeEventListener("scroll", ()=>{});
+  }, []);
+
   const navlinks = (
     <>
       <li>
@@ -19,7 +30,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav>
+    <nav className={`bg-white/20 px-3`}>
       <div className="flex justify-between items-center">
         <Link href="/">
           <Logo />

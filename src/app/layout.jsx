@@ -24,11 +24,11 @@ export default function RootLayout({ children }) {
         {/* Dark Overlay */}
         <div className="fixed inset-0 bg-black/75 -z-10 backdrop-blur-sm"></div>
 
-        <header>
+        <header className="sticky top-0 z-20 -mx-3">
           <div className="">
             <Navbar/>
           </div>
-          <div className="border-t border-gray-500 -mx-3"></div>
+          <div className="border- border-gray-500 -mx-3"></div>
         </header>
 
         <main className="max-w-7xl mx-auto py-8 flex-1">{children}</main>
