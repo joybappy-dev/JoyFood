@@ -31,7 +31,7 @@ const Navbar = () => {
   );
   return (
     <nav
-      className={`bg-white/20 px-3 border border-gray-400 rounded-sm ${scrolled > 300 && "backdrop-blur-sm"}`}
+      className={`bg-white/20 px-3 border border-gray-400 rounded-sm backdrop-blur-md`}
     >
       <div className="flex justify-between items-center">
         <Link href="/">
