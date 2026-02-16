@@ -6,14 +6,24 @@ import Button from "../Button/page";
 const Navbar = () => {
   const navlinks = (
     <>
-      <li><Button>Foods</Button></li>
-      <li><Button>Reviews</Button></li>
+      <li>
+        <Link href="/foods">
+          <Button>Foods</Button>
+        </Link>
+      </li>
+      <li>
+        <Link href="/reviews">
+          <Button>Reviews</Button>
+        </Link>
+      </li>
     </>
   );
   return (
     <nav>
       <div className="flex justify-between items-center">
-        <Link href="/"><Logo /></Link>
+        <Link href="/">
+          <Logo />
+        </Link>
         <ul className="flex justify-between gap-4">{navlinks}</ul>
       </div>
     </nav>
