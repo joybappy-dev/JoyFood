@@ -1,21 +1,11 @@
 import React from "react";
 
-const getFoods = async () => {
-  const res = await fetch(
-    "https://taxi-kitchen-api.vercel.app/api/v1/foods/random",
-    { cache: "no-store" },
-  );
-  const data = await res.json();
-  return data.foods || [];
-};
-const foods = await getFoods();
-
-const CardSkeleton = () => {
+const LoadingSkeleton = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {foods.map((food) => (
+      {Array.from({ length: 12 }).map((_, index) => (
         <div
-          key={food.id}
+          key={index}
           className="animate-pulse group relative bg-white/20 backdrop-blur-sm border border-white/10 rounded-sm overflow-hidden transition-all duration-300"
         >
           {/* Image Skeleton */}
@@ -37,4 +27,5 @@ const CardSkeleton = () => {
     </div>
   );
 };
-export default CardSkeleton;
+
+export default LoadingSkeleton;

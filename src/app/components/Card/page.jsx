@@ -28,7 +28,7 @@ const Card = ({ food }) => {
         </h3>
         <p className="text-sm text-gray-200">{food.category}</p>
         <Link href={`/food/details/${food.id}`}>
-          <Button className="w-full cursor-pointer">View Details</Button>
+          <Button className="w-full">View Details</Button>
         </Link>
       </div>
     </div>

@@ -10,7 +10,7 @@ const Button = ({ children, props, className="" }) => {
                    hover:bg-white/20
                    transition-all duration-300
                    shadow-lg hover:shadow-xl
-                   active:scale-95 ${className}`}
+                   active:scale-95 ${className} cursor-pointer`}
     >
       {children}
     </button>
