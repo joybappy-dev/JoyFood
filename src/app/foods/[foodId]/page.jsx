@@ -1,4 +1,5 @@
 "use client";
+import DetailsPageSkeleton from "@/app/components/DetailsPageSkeleton/page";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -6,14 +7,31 @@ import React, { useEffect, useState } from "react";
 const FoodDetails = () => {
   const { foodId } = useParams();
   const [food, setFood] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://taxi-kitchen-api.vercel.app/api/v1/foods/${foodId}`)
-      .then((res) => res.json())
-      .then((data) => setFood(data.details));
+    const fetchFoodDetails = async () => {
+      try {
+        const res = await fetch(
+          `https://taxi-kitchen-api.vercel.app/api/v1/foods/${foodId}`,
+        );
+        const data = await res.json();
+        setFood(data.details);
+      } catch (error) {
+      } finally {
+        setTimeout(() => {
+          setLoading(false);
+        }, 200);
+      }
+    };
+    if (foodId) {
+      fetchFoodDetails();
+    }
   }, [foodId]);
 
-  console.log(food);
+  if (loading) {
+    return <DetailsPageSkeleton />;
+  }
 
   return (
     <div className="max-w-7xl mx-auto">
@@ -78,7 +96,7 @@ const FoodDetails = () => {
           Watch Recipe Video
         </h2>
 
-        <div className="aspect-video rounded-sm overflow-hidden border border-white/10">
+        <div className="aspect-video rounded-sm overflow-hidden border border-white/10 bg-white/20">
           <iframe
             className="w-full h-full"
             src={food?.video?.replace("watch?v=", "embed/")}

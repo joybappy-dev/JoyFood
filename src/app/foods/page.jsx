@@ -11,6 +11,7 @@ const getFoods = async () => {
 const foods = await getFoods();
 
 const FoodsPage = async () => {
+  await new Promise((r) => setTimeout(r, 200));
   return (
     <div>
       <Title>
