@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
           <div className="border- border-gray-500 -mx-3"></div>
         </header>
 
-        <main className="py-8 flex-1 max-w-7xl mx-auto min-h-screen">{children}</main>
+        <main className="py-12 flex-1 max-w-7xl mx-auto min-h-screen">{children}</main>
 
         <footer>
           <div className="border-t border-gray-500 -mx-3"></div>

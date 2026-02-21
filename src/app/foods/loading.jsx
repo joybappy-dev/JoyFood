@@ -5,7 +5,7 @@ const LoadingSkeleton = () => {
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {Array.from({ length: 12 }).map((_, index) => (
         <div
-          key={index}
+          key={index} 
           className="animate-pulse group relative bg-white/20 backdrop-blur-sm border border-white/10 rounded-sm overflow-hidden transition-all duration-300"
         >
           {/* Image Skeleton */}

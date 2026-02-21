@@ -27,7 +27,7 @@ const Card = ({ food }) => {
           {food.title}
         </h3>
         <p className="text-sm text-gray-200">{food.category}</p>
-        <Link href={`/food/details/${food.id}`}>
+        <Link href={`/foods/${food.id}`}>
           <Button className="w-full">View Details</Button>
         </Link>
       </div>
