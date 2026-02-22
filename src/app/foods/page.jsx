@@ -10,6 +10,11 @@ const getFoods = async () => {
 };
 const foods = await getFoods();
 
+export const metadata = {
+  title: "Explore Foods",
+  description: "Explore the best foods in Bangladesh"
+}
+
 const FoodsPage = async () => {
   await new Promise((r) => setTimeout(r, 200));
   return (

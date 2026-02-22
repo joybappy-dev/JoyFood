@@ -1,6 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Food Details"
+};
+
 const FoodDetails = async ({ params }) => {
+  // loading food details from params foodId
   const getFood = async () => {
     const { foodId } = await params;
     const res = await fetch(

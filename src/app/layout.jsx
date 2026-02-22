@@ -8,7 +8,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Joy Foods | Home",
+  title: "Joy Food",
   description: "Joy Foods is a resturant, Serving Best Foods in Bangladesh",
 };
 
