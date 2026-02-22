@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Food Details"
+  title: "Food Details",
 };
 
 const FoodDetails = async ({ params }) => {
@@ -26,7 +26,7 @@ const FoodDetails = async ({ params }) => {
           <img
             src={food?.foodImg}
             alt={food?.title}
-            className="w-full h-[450px] object-cover"
+            className="w-full h-112.5 object-cover"
           />
           <span className="absolute top-4 right-4 bg-yellow-400 text-black font-semibold px-4 py-2 rounded-sm shadow-lg">
             ৳ {food?.price}
