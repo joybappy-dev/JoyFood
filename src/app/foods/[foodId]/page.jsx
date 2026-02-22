@@ -1,37 +1,16 @@
-"use client";
-import DetailsPageSkeleton from "@/app/components/DetailsPageSkeleton/page";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
 
-const FoodDetails = () => {
-  const { foodId } = useParams();
-  const [food, setFood] = useState({});
-  const [loading, setLoading] = useState(true);
+const FoodDetails = async ({ params }) => {
+  const getFood = async () => {
+    const { foodId } = await params;
+    const res = await fetch(
+      `https://taxi-kitchen-api.vercel.app/api/v1/foods/${foodId}`,
+    );
+    const data = await res.json();
+    return data.details;
+  };
 
-  useEffect(() => {
-    const fetchFoodDetails = async () => {
-      try {
-        const res = await fetch(
-          `https://taxi-kitchen-api.vercel.app/api/v1/foods/${foodId}`,
-        );
-        const data = await res.json();
-        setFood(data.details);
-      } catch (error) {
-      } finally {
-        setTimeout(() => {
-          setLoading(false);
-        }, 200);
-      }
-    };
-    if (foodId) {
-      fetchFoodDetails();
-    }
-  }, [foodId]);
-
-  if (loading) {
-    return <DetailsPageSkeleton />;
-  }
+  const food = await getFood();
 
   return (
     <div className="max-w-7xl mx-auto">
