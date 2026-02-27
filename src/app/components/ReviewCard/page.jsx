@@ -2,11 +2,9 @@ import React from "react";
 
 const ReviewCard = ({ review }) => {
   return (
-    <div className="group relative bg-white/20 backdrop-blur-sm border border-white/10 rounded-sm overflow-hidden transition-all duration-300 flex flex-col h-full">
-
+    <div className="group relative bg-white/20 backdrop-blur-md border border-white/10 rounded-sm overflow-hidden transition-all duration-300 flex flex-col h-full">
       {/* Content */}
       <div className="p-6 flex flex-col flex-1">
-
         {/* User Info */}
         <div className="flex items-center gap-4">
           <img
@@ -27,7 +25,9 @@ const ReviewCard = ({ review }) => {
         {/* Rating */}
         <div className="flex mt-4">
           {[...Array(review.rating)].map((_, i) => (
-            <span key={i} className="text-yellow-400 text-lg">★</span>
+            <span key={i} className="text-yellow-400 text-lg">
+              ★
+            </span>
           ))}
         </div>
 
@@ -39,11 +39,8 @@ const ReviewCard = ({ review }) => {
         {/* Bottom Section */}
         <div className="mt-auto pt-4 border-t border-white/10 flex justify-between items-center text-sm text-gray-400">
           <span>{review.likes.length} Likes</span>
-          <button className="hover:text-yellow-400 transition">
-            Like ❤️
-          </button>
+          <button className="hover:text-yellow-400 transition">Like ❤️</button>
         </div>
-
       </div>
     </div>
   );

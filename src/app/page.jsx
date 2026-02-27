@@ -41,7 +41,7 @@ export default function Home() {
 
         {/* Right Image */}
         <div className="flex-1 flex justify-center lg:justify-end">
-          <div className="relative bg-white/10 backdrop-blur-md border border-white/10 rounded-sm p-6 shadow-xl">
+          <div className="relative bg-white/20 backdrop-blur-md border border-white/10 rounded-sm p-6 shadow-xl">
             <img
               className="w-105 object-contain drop-shadow-2xl"
               src="/samosa.png"
