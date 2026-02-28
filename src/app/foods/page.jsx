@@ -2,6 +2,7 @@ import Link from "next/link";
 import Card from "../components/Card/page";
 import Title from "../components/Title/page";
 import Button from "../components/Button/page";
+import CartCount from "../components/CartCount/CartCount";
 
 const getFoods = async () => {
   const res = await fetch(
@@ -27,7 +28,7 @@ const FoodsPage = () => {
         </Title>
 
         <Link href={"/cart-items"}>
-          <Button>View Cart</Button>
+          <Button>View Cart <CartCount></CartCount></Button>
         </Link>
       </div>
 
