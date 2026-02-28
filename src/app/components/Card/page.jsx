@@ -27,12 +27,12 @@ const Card = ({ food }) => {
         <p className="text-sm text-gray-200 mt-2">{food.category}</p>
 
         {/* Push button to bottom */}
-        <div className="mt-auto pt-4">
+        <div className="mt-auto pt-4 flex flex-col gap-4">
           <Link href={`/foods/${food.id}`}>
             <Button className="w-full">View Details</Button>
           </Link>
 
-          <AddToCartButton/>
+          <AddToCartButton food={food}/>
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Card from "../components/Card/page";
 import Title from "../components/Title/page";
+import Button from "../components/Button/page";
 
 const getFoods = async () => {
   const res = await fetch(
@@ -12,21 +14,29 @@ const foods = await getFoods();
 
 export const metadata = {
   title: "Explore Foods",
-  description: "Explore the best foods in Bangladesh"
-}
+  description: "Explore the best foods in Bangladesh",
+};
 
-const FoodsPage = async () => {
-  await new Promise((r) => setTimeout(r, 200));
+const FoodsPage = () => {
   return (
     <div>
-      <Title>
-        Explore Foods <span className="text-yellow-400">({foods.length})</span>
-      </Title>
+      <div className="flex justify-between">
+        <Title>
+          Explore Foods{" "}
+          <span className="text-yellow-400">({foods.length})</span>
+        </Title>
 
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-        {foods.map((food) => (
-          <Card key={food.id} food={food} />
-        ))}
+        <Link href={"/cart-items"}>
+          <Button>View Cart</Button>
+        </Link>
+      </div>
+
+      <div className="">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 flex-1">
+          {foods.map((food) => (
+            <Card key={food.id} food={food} />
+          ))}
+        </div>
       </div>
     </div>
   );

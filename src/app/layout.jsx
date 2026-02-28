@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/page";
+import CartProvider from "@/contexts/CartProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,12 +27,14 @@ export default function RootLayout({ children }) {
 
         <header className="sticky top-10 z-20 max-w-7xl mx-auto mb-8">
           <div className="">
-            <Navbar/>
+            <Navbar />
           </div>
           <div className="border- border-gray-500 -mx-3"></div>
         </header>
 
-        <main className="py-12 flex-1 max-w-7xl mx-auto min-h-screen">{children}</main>
+        <main className="py-12 flex-1 max-w-7xl mx-auto min-h-screen">
+          <CartProvider>{children}</CartProvider>
+        </main>
 
         <footer>
           <div className="border-t border-gray-500 -mx-3"></div>

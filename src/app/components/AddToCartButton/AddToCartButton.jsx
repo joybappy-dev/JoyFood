@@ -1,19 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Button from "../Button/page";
+import { CartContext } from "@/contexts/CartProvider";
 
-const AddToCartButton = () => {
-  const [inCart, setInCart] = useState(false);
-
-  const handleAddToCart = () => {
-    setInCart(true);
-    console.log(inCart);
+const AddToCartButton = ({ food }) => {
+  const { setIncart, inCart } = useContext(CartContext);
+  const handleAddToCart = (item) => {
+    setIncart([item, ...inCart]);
   };
+
+  const itemExists = inCart.some((item) => item.id === food.id);
+
   return (
-    <button className="w-full" onClick={handleAddToCart}>
-      <Button className="w-full mt-4">
-        {inCart? "Added" : "Add To Cart"}
-      </Button>
+    <button onClick={() => handleAddToCart(food)} className={`w-full`}>
+      <Button className="w-full">{itemExists ? "Added" : "Add To Cart"}</Button>
     </button>
   );
 };
