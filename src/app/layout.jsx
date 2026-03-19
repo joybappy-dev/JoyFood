@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
 
         <footer>
           <div className="border-t border-gray-500 -mx-3"></div>
-          <p className="py-4">Footer</p>
+          <p className="py-4">Footer Copyright JoyBappy</p>
         </footer>
       </body>
     </html>
