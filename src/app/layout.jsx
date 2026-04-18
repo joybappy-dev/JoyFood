@@ -9,7 +9,10 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Joy Food",
+  title: {
+    default: "Joy Food",
+    template: "%s | Joy Food",
+  },
   description: "Joy Foods is a resturant, Serving Best Foods in Bangladesh",
 };
 

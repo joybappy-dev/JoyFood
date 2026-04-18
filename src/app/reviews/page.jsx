@@ -3,7 +3,7 @@ import Title from "../components/Title/page";
 import ReviewCard from "../components/ReviewCard/page";
 
 export const metadata = {
-  title: "Foods Reviews",
+  title: "Customers Review",
 };
 
 const getReviews = async () => {
