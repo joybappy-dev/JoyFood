@@ -1,8 +1,20 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Food Details",
-};
+// Generate dynamic title using generateMetadata function
+// load food details using params id
+// get the food title and retrun as metaData title
+export async function generateMetadata({ params }) {
+  const { foodId } = await params;
+  const res = await fetch(
+    `https://taxi-kitchen-api.vercel.app/api/v1/foods/${foodId}`,
+  );
+  const food = await res.json();
+  // console.log("here::", food);
+  return {
+    title: food.details.title,
+    description: food.details.title,
+  };
+}
 
 const FoodDetails = async ({ params }) => {
   // loading food details from params foodId
