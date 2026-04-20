@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 // Generate dynamic title using generateMetadata function
@@ -35,9 +36,11 @@ const FoodDetails = async ({ params }) => {
       <div className="grid lg:grid-cols-2 gap-10 items-start">
         {/* Image */}
         <div className="relative rounded-sm overflow-hidden border border-white/10 bg-white/20 backdrop-blur-sm">
-          <img
+          <Image
             src={food?.foodImg}
             alt={food?.title}
+            width={200}
+            height={200}
             className="w-full h-112.5 object-cover"
           />
           <span className="absolute top-4 right-4 bg-yellow-400 text-black font-semibold px-4 py-2 rounded-sm shadow-lg">

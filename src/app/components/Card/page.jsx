@@ -2,17 +2,27 @@ import React from "react";
 import Button from "../Button/page";
 import Link from "next/link";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
+import Image from "next/image";
 
 const Card = ({ food }) => {
   return (
     <div className="group relative bg-white/20 backdrop-blur-md border border-white/10 rounded-sm overflow-hidden transition-all duration-300 flex flex-col h-full">
       {/* Image */}
       <div className="relative h-64 overflow-hidden">
-        <img
+        {/* <img
           src={food.foodImg}
           alt={food.title}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        /> */}
+
+        <Image
+          src={food?.foodImg}
+          alt={food?.title}
+          width={200}
+          height={200}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
+
         <span className="absolute top-3 right-3 bg-yellow-400 text-black text-sm font-semibold px-3 py-1 rounded-sm shadow">
           ৳ {food.price}
         </span>
@@ -32,7 +42,7 @@ const Card = ({ food }) => {
             <Button className="w-full">View Details</Button>
           </Link>
 
-          <AddToCartButton food={food}/>
+          <AddToCartButton food={food} />
         </div>
       </div>
     </div>

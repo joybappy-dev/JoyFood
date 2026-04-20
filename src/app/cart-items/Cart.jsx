@@ -2,6 +2,7 @@
 import React, { useContext } from "react";
 import Title from "../components/Title/page";
 import { CartContext } from "@/contexts/CartProvider";
+import Image from "next/image";
 
 const Cart = () => {
   const { inCart } = useContext(CartContext);
@@ -23,10 +24,18 @@ const Cart = () => {
             >
               {/* Image */}
               <div className="relative w-28 h-28 shrink-0">
-                <img
+                {/* <img
                   src={item?.foodImg}
                   alt={item.title}
                   className="object-cover rounded-sm"
+                /> */}
+
+                <Image 
+                src={item?.foodImg}
+                  alt={item.title}
+                  className="object-cover rounded-sm"
+                  height={200}
+                  width={200}
                 />
               </div>
 
