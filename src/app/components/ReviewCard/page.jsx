@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import React from "react";
 
 const ReviewCard = ({ review }) => {
@@ -8,9 +9,11 @@ const ReviewCard = ({ review }) => {
       <div className="p-6 flex flex-col flex-1">
         {/* User Info */}
         <div className="flex items-center gap-4">
-          <img
+          <Image
             src={review.photo}
             alt={review.user}
+            width={200}
+            height={200}
             className="w-12 h-12 rounded-full object-cover border border-yellow-400/40"
           />
           <div>
