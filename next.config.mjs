@@ -7,14 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.themealdb.com",
         port: "",
-        pathname: "/images/**",
+        pathname: "/images/media/**",
         search: "",
       },
-    ],
-  },
 
-    images: {
-    remotePatterns: [
       {
         protocol: "https",
         hostname: "randomuser.me",

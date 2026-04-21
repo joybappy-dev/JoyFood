@@ -1,4 +1,4 @@
-import { Poppins } from "next/font/google";
+import { Lobster, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/page";
 import CartProvider from "@/contexts/CartProvider";
@@ -6,6 +6,11 @@ import CartProvider from "@/contexts/CartProvider";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400"],
+});
+
+const lobster = Lobster({
+  weight: "400",
+  subsets: ["cyrillic"]
 });
 
 export const metadata = {
@@ -35,7 +40,7 @@ export default function RootLayout({ children }) {
           <div className="border- border-gray-500 -mx-3"></div>
         </header>
 
-        <main className="py-12 flex-1 max-w-7xl mx-auto min-h-screen">
+        <main className={`py-12 flex-1 max-w-7xl mx-auto min-h-screen ${lobster.className}`}>
           <CartProvider>{children}</CartProvider>
         </main>
 
