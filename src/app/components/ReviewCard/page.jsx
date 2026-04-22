@@ -1,9 +1,18 @@
+import { Anek_Bangla } from "next/font/google";
 import Image from "next/image";
 import React from "react";
 
+const bangla = Anek_Bangla({
+  weight: ["400"],
+  subsets: ["bangla"],
+});
 const ReviewCard = ({ review }) => {
+
+
   return (
-    <div className="group relative bg-white/20 backdrop-blur-md border border-white/10 rounded-sm overflow-hidden transition-all duration-300 flex flex-col h-full">
+    <div
+      className={`${bangla.className} group relative bg-white/20 backdrop-blur-md border border-white/10 rounded-sm overflow-hidden transition-all duration-300 flex flex-col h-full`}
+    >
       {/* Content */}
       <div className="p-6 flex flex-col flex-1">
         {/* User Info */}

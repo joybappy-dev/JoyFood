@@ -1,12 +1,12 @@
-import { Fuzzy_Bubbles, Lobster, Poppins } from "next/font/google";
+import {  Fuzzy_Bubbles, Lobster, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/page";
 import CartProvider from "@/contexts/CartProvider";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+// const poppins = Poppins({
+//   subsets: ["latin"],
+//   weight: ["400"],
+// });
 
 // const lobster = Lobster({
 //   weight: "400",
