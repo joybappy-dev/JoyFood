@@ -1,4 +1,4 @@
-import { Lobster, Poppins } from "next/font/google";
+import { Fuzzy_Bubbles, Lobster, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar/page";
 import CartProvider from "@/contexts/CartProvider";
@@ -8,9 +8,14 @@ const poppins = Poppins({
   weight: ["400"],
 });
 
-const lobster = Lobster({
-  weight: "400",
-  subsets: ["cyrillic"]
+// const lobster = Lobster({
+//   weight: "400",
+//   subsets: ["cyrillic"]
+// });
+
+const fuzzy = Fuzzy_Bubbles({
+  weight: ["400"],
+  subsets: ["latin"],
 });
 
 export const metadata = {
@@ -24,7 +29,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} text-white px-3`}>
+      <body className={`${fuzzy.className} text-white px-3`}>
         <div
           className="fixed inset-0 bg-cover bg-center -z-20"
           style={{ backgroundImage: "url('/bg.jpg')" }}
@@ -40,7 +45,7 @@ export default function RootLayout({ children }) {
           <div className="border- border-gray-500 -mx-3"></div>
         </header>
 
-        <main className={`py-12 flex-1 max-w-7xl mx-auto min-h-screen ${lobster.className}`}>
+        <main className={`py-12 flex-1 max-w-7xl mx-auto min-h-screen`}>
           <CartProvider>{children}</CartProvider>
         </main>
 
